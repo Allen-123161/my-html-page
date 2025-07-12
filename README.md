@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>化学魔法抽奖系统</title>
+    <title>化学魔法抽奖</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0f0c29, #1a1a3e, #0c0c2d);
+            background: linear-gradient(135deg, #0a081f, #1a1a3e, #0c0c2d);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -64,10 +64,10 @@
         }
         
         .container {
-            background: rgba(15, 10, 35, 0.85);
+            background: rgba(15, 10, 35, 0.92);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 
-                        0 0 60px rgba(80, 100, 180, 0.4) inset;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 
+                        0 0 60px rgba(80, 100, 180, 0.5) inset;
             width: 100%;
             max-width: 900px;
             padding: 40px 30px;
@@ -75,7 +75,7 @@
             overflow: hidden;
             position: relative;
             z-index: 10;
-            border: 3px solid #4a65a5;
+            border: 3px solid #5a7ac5;
         }
         
         /* 化学光环效果 */
@@ -91,7 +91,7 @@
             border-radius: 30px;
             animation: rotateHalo 30s linear infinite;
             filter: blur(30px);
-            opacity: 0.3;
+            opacity: 0.4;
         }
         
         @keyframes rotateHalo {
@@ -106,10 +106,10 @@
         
         .title {
             font-size: 4.2rem;
-            background: linear-gradient(45deg, #6bcfff, #4a65a5, #3a8fdf);
+            background: linear-gradient(45deg, #6bcfff, #5a7ac5, #3a8fdf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 40px rgba(107, 207, 255, 0.5);
+            text-shadow: 0 0 40px rgba(107, 207, 255, 0.6);
             margin-bottom: 15px;
             letter-spacing: 4px;
             animation: glow 3s ease-in-out infinite alternate;
@@ -117,8 +117,8 @@
         }
         
         @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(107, 207, 255, 0.5); }
-            to { text-shadow: 0 0 40px rgba(74, 101, 165, 0.7), 0 0 60px rgba(58, 143, 223, 0.6); }
+            from { text-shadow: 0 0 20px rgba(107, 207, 255, 0.6); }
+            to { text-shadow: 0 0 40px rgba(74, 101, 165, 0.8), 0 0 60px rgba(58, 143, 223, 0.7); }
         }
         
         .subtitle {
@@ -127,7 +127,7 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
-            text-shadow: 0 0 15px rgba(192, 208, 255, 0.4);
+            text-shadow: 0 0 15px rgba(192, 208, 255, 0.5);
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -136,25 +136,27 @@
             display: block;
         }
         
-        /* 长方形显示区 */
+        /* 长方形显示区 - 更明亮的颜色 */
         .display-rectangle {
             width: 90%;
             max-width: 700px;
-            height: 280px;
+            height: 300px;
             margin: 0 auto 40px;
             position: relative;
-            background: linear-gradient(135deg, rgba(30, 40, 80, 0.7), rgba(20, 30, 60, 0.9));
+            background: linear-gradient(135deg, rgba(40, 60, 120, 0.8), rgba(30, 50, 100, 0.95));
             border-radius: 15px;
             box-shadow: 
-                inset 0 0 40px rgba(100, 150, 220, 0.4),
-                0 0 40px rgba(80, 120, 180, 0.6);
-            border: 3px solid rgba(100, 150, 220, 0.4);
+                inset 0 0 50px rgba(120, 180, 255, 0.6),
+                0 0 50px rgba(80, 140, 220, 0.8);
+            border: 4px solid rgba(120, 170, 255, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             padding: 20px;
+            transition: all 0.5s ease;
+            z-index: 20;
         }
         
         .display-rectangle::before {
@@ -165,17 +167,17 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(90deg, transparent 50%, rgba(100, 180, 255, 0.05) 50%),
-                linear-gradient(transparent 50%, rgba(100, 180, 255, 0.05) 50%);
+                linear-gradient(90deg, transparent 50%, rgba(150, 200, 255, 0.1) 50%),
+                linear-gradient(transparent 50%, rgba(150, 200, 255, 0.1) 50%);
             background-size: 40px 40px;
-            opacity: 0.4;
+            opacity: 0.5;
             z-index: 1;
         }
         
         /* 化学气泡效果 */
         .bubble {
             position: absolute;
-            background: rgba(180, 220, 255, 0.2);
+            background: rgba(180, 220, 255, 0.3);
             border-radius: 50%;
             animation: bubbleUp 10s infinite ease-in-out;
             z-index: 2;
@@ -183,7 +185,7 @@
         
         @keyframes bubbleUp {
             0% { transform: translateY(0) scale(0); opacity: 0; }
-            10% { opacity: 0.3; }
+            10% { opacity: 0.4; }
             90% { opacity: 0.2; }
             100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
         }
@@ -202,21 +204,21 @@
         .result-line {
             font-size: 2.8rem;
             font-weight: 800;
-            color: #6bcfff;
-            text-shadow: 0 0 20px rgba(107, 207, 255, 0.7);
+            color: #ffdd66;
+            text-shadow: 0 0 25px rgba(255, 221, 102, 0.8);
             margin: 10px 0;
             text-align: center;
             line-height: 1.4;
             padding: 10px 30px;
             border-radius: 12px;
-            background: rgba(10, 25, 50, 0.5);
+            background: rgba(10, 25, 50, 0.6);
             transition: all 0.5s ease;
             max-width: 90%;
         }
         
         .result-line-1 {
             font-size: 3.2rem;
-            color: #4ac0ff;
+            color: #ffcc00;
             font-weight: 900;
             letter-spacing: 1px;
             margin-bottom: 15px;
@@ -224,15 +226,16 @@
         
         .result-line-2 {
             font-size: 2.4rem;
-            color: #8ad0ff;
-            background: rgba(15, 35, 70, 0.4);
+            color: #aae0ff;
+            background: rgba(15, 35, 70, 0.5);
             padding: 12px 40px;
             border-radius: 50px;
             margin-top: 10px;
+            border: 2px solid rgba(100, 180, 255, 0.4);
         }
         
         .magic-button {
-            background: linear-gradient(135deg, #4a65a5 0%, #2a2a5a 100%);
+            background: linear-gradient(135deg, #5a7ac5 0%, #3a3a7a 100%);
             color: white;
             border: none;
             padding: 25px 70px;
@@ -241,8 +244,8 @@
             border-radius: 60px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
-                        0 0 40px rgba(80, 120, 180, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 
+                        0 0 50px rgba(100, 150, 220, 0.7);
             position: relative;
             overflow: hidden;
             letter-spacing: 3px;
@@ -257,15 +260,15 @@
             left: -60%;
             width: 30px;
             height: 300%;
-            background: rgba(180, 220, 255, 0.4);
+            background: rgba(200, 230, 255, 0.5);
             transform: rotate(25deg);
             transition: all 0.7s;
         }
         
         .magic-button:hover {
             transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 
-                        0 0 50px rgba(100, 150, 220, 0.8);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 
+                        0 0 60px rgba(120, 170, 255, 0.9);
         }
         
         .magic-button:hover::before {
@@ -274,7 +277,7 @@
         
         .magic-button:active {
             transform: translateY(4px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
         }
         
         .footer {
@@ -282,7 +285,7 @@
             color: #a0c0ff;
             font-size: 1.3rem;
             opacity: 0.8;
-            text-shadow: 0 0 12px rgba(160, 192, 255, 0.3);
+            text-shadow: 0 0 12px rgba(160, 192, 255, 0.4);
             line-height: 1.6;
         }
         
@@ -302,7 +305,7 @@
             }
             
             .display-rectangle {
-                height: 250px;
+                height: 280px;
             }
             
             .result-line-1 {
@@ -333,7 +336,7 @@
             }
             
             .display-rectangle {
-                height: 220px;
+                height: 250px;
                 margin-bottom: 35px;
             }
             
@@ -370,7 +373,7 @@
             }
             
             .display-rectangle {
-                height: 200px;
+                height: 220px;
                 margin-bottom: 30px;
             }
             
@@ -405,9 +408,9 @@
         
         /* 副标题强调动画 */
         @keyframes pulse {
-            0% { text-shadow: 0 0 10px rgba(192, 208, 255, 0.4); }
-            50% { text-shadow: 0 0 20px rgba(192, 208, 255, 0.7); }
-            100% { text-shadow: 0 0 10px rgba(192, 208, 255, 0.4); }
+            0% { text-shadow: 0 0 10px rgba(192, 208, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(192, 208, 255, 0.8); }
+            100% { text-shadow: 0 0 10px rgba(192, 208, 255, 0.5); }
         }
         
         .pulse {
@@ -447,6 +450,35 @@
             right: -50px;
             background: rgba(70, 130, 210, 0.3);
         }
+        
+        /* 烟花粒子 */
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 25;
+        }
+        
+        /* 爆炸动画 */
+        @keyframes explode {
+            0% { 
+                transform: translate(-50%, -50%) scale(0.1); 
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(3); 
+                opacity: 0;
+            }
+        }
+        
+        .explosion {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 30;
+            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,200,0,0) 70%);
+            animation: explode 1.2s ease-out forwards;
+        }
     </style>
 </head>
 <body>
@@ -479,7 +511,7 @@
         <div class="corner-light br"></div>
         
         <div class="header">
-            <h1 class="title">化学魔法抽奖系统</h1>
+            <h1 class="title">化学魔法抽奖</h1>
             <p class="subtitle">
                 <span class="subtitle-line pulse">点击启动按钮，揭示化学反应的奇迹！</span>
                 <span class="subtitle-line">每次实验仅限一次魔法施展</span>
@@ -526,50 +558,68 @@
             }
         }
         
-        // 创建化学粒子效果
-        function createChemistryParticles(x, y) {
-            const colors = ['#6bcfff', '#4a65a5', '#3a8fdf', '#4ac0ff', '#8ad0ff', '#5a7ac5'];
+        // 创建烟花效果
+        function createFireworks(x, y) {
+            const colors = ['#ff3366', '#ffcc00', '#4deeea', '#74ee15', '#f000ff', '#4a65a5'];
             
-            for (let i = 0; i < 100; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('chemistry-particle');
+            for (let i = 0; i < 120; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
                 
                 // 随机大小
-                const size = Math.random() * 20 + 5;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
+                const size = Math.random() * 15 + 5;
+                firework.style.width = size + 'px';
+                firework.style.height = size + 'px';
                 
                 // 随机颜色
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 
                 // 起始位置
-                particle.style.left = x + 'px';
-                particle.style.top = y + 'px';
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
                 
                 // 随机移动方向
                 const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 200 + 100;
+                const distance = Math.random() * 300 + 150;
                 
                 // 动画
-                particle.style.transition = `all ${Math.random() * 2 + 0.5}s ease-out`;
-                particle.style.opacity = '1';
+                firework.style.transition = `all ${Math.random() * 1.5 + 0.8}s ease-out`;
+                firework.style.opacity = '1';
                 
-                document.body.appendChild(particle);
+                document.body.appendChild(firework);
                 
                 // 动画结束
                 setTimeout(() => {
-                    particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
-                    particle.style.opacity = '0';
+                    firework.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+                    firework.style.opacity = '0';
                 }, 10);
                 
                 // 移除元素
                 setTimeout(() => {
-                    particle.remove();
-                }, 2000);
+                    firework.remove();
+                }, 1800);
             }
         }
         
-        // 固定文本条目
+        // 创建爆炸效果
+        function createExplosion(x, y) {
+            const explosion = document.createElement('div');
+            explosion.classList.add('explosion');
+            
+            explosion.style.left = x + 'px';
+            explosion.style.top = y + 'px';
+            explosion.style.width = '0';
+            explosion.style.height = '0';
+            
+            document.body.appendChild(explosion);
+            
+            // 移除元素
+            setTimeout(() => {
+                explosion.remove();
+            }, 1200);
+        }
+        
+        // 固定文本条目（已添加新条目）
         const magicEntries = [
             "单刀直入 单数组+200",
             "单刀直入 单数组+200",
@@ -588,7 +638,11 @@
             "复分解反应 指定一组分数与本组交换",
             "复分解反应 指定一组分数与本组交换",
             "取长补短 最高分-200，最高分+200",
-            "取长补短 最高分-200，最高分+200"
+            "取长补短 最高分-200，最高分+200",
+            "千锤百炼 本组人手一份辅导资料",
+            "千锤百炼 本组人手一份辅导资料",
+            "真情吐露 小组成员说三遍“我爱化学，化学使我快乐”",
+            "真情吐露 小组成员说三遍“我爱化学，化学使我快乐”"
         ];
         
         // 初始化
@@ -607,19 +661,13 @@
                 magicButton.style.opacity = '0.7';
                 magicButton.textContent = "⚗️ 实验进行中 ⚗️";
                 
-                // 获取按钮位置用于粒子效果
-                const rect = magicButton.getBoundingClientRect();
-                const x = rect.left + rect.width / 2;
-                const y = rect.top + rect.height / 2;
-                
-                // 创建粒子效果
-                createChemistryParticles(x, y);
-                
                 // 显示区发光效果
                 displayRect.style.boxShadow = 
-                    'inset 0 0 60px rgba(100, 180, 255, 0.6),' +
-                    '0 0 60px rgba(80, 150, 220, 0.8)';
-                displayRect.style.transition = 'box-shadow 0.8s ease-in-out';
+                    'inset 0 0 80px rgba(150, 200, 255, 0.8),' +
+                    '0 0 80px rgba(120, 180, 255, 0.9)';
+                displayRect.style.border = '4px solid rgba(150, 200, 255, 0.8)';
+                displayRect.style.transform = 'scale(1.03)';
+                displayRect.style.transition = 'all 0.8s ease-in-out';
                 
                 // 结果元素准备
                 resultLine1.textContent = "化学反应进行中";
@@ -647,11 +695,21 @@
                     // 显示结果
                     displayResult(firstLine, secondLine);
                     
+                    // 创建烟花效果
+                    const rect = displayRect.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    createFireworks(centerX, centerY);
+                    createExplosion(centerX, centerY);
+                    
                     // 恢复显示区效果
                     setTimeout(() => {
                         displayRect.style.boxShadow = 
-                            'inset 0 0 40px rgba(100, 150, 220, 0.4),' +
-                            '0 0 40px rgba(80, 120, 180, 0.6)';
+                            'inset 0 0 50px rgba(120, 180, 255, 0.6),' +
+                            '0 0 50px rgba(80, 140, 220, 0.8)';
+                        displayRect.style.border = '4px solid rgba(120, 170, 255, 0.6)';
+                        displayRect.style.transform = 'scale(1)';
                         
                         // 重新启用按钮
                         setTimeout(() => {
